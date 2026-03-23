@@ -1,6 +1,6 @@
 import PageHero from "@/components/PageHero";
 import { Link } from "react-router-dom";
-import { ArrowRight, Check } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 const MembershipBenefits = () => (
   <>
@@ -10,9 +10,10 @@ const MembershipBenefits = () => (
       subtitle="Discover the full range of benefits available to TCCBC members."
       breadcrumb={[{ label: "Membership", path: "/Why-Join-Us" }]}
     />
-    <section className="section-padding">
-      <div className="container mx-auto px-5 max-w-3xl">
-        <div className="space-y-6">
+
+    <section className="py-32 md:py-48 px-6 md:px-10">
+      <div className="max-w-7xl mx-auto">
+        <div className="grid lg:grid-cols-2 gap-x-16 gap-y-0">
           {[
             "Access to exclusive business networking events and social gatherings",
             "Business Lunch Social Networking 商業午餐交流",
@@ -24,21 +25,23 @@ const MembershipBenefits = () => (
             "Member & Lifetime Member Lunar New Year Gathering",
             "Connection to a broad network of professionals and entrepreneurs",
             "Newsletter subscription with latest community updates",
-          ].map((benefit) => (
-            <div key={benefit} className="flex items-start gap-4 p-4 bg-card border border-border rounded-lg">
-              <div className="w-6 h-6 bg-secondary/10 rounded-full flex items-center justify-center shrink-0 mt-0.5">
-                <Check className="w-3.5 h-3.5 text-secondary" />
-              </div>
-              <p className="text-foreground font-medium">{benefit}</p>
+          ].map((benefit, i) => (
+            <div key={i} className="flex items-start gap-6 py-8 border-b border-border group">
+              <span className="text-xs text-border font-heading italic group-hover:text-secondary transition-colors">
+                {String(i + 1).padStart(2, "0")}
+              </span>
+              <p className="text-sm text-foreground font-light leading-relaxed">{benefit}</p>
             </div>
           ))}
         </div>
-        <div className="text-center mt-12">
+
+        <div className="mt-24 text-center">
           <Link
             to="/join-us"
-            className="inline-flex items-center gap-2 bg-secondary text-secondary-foreground px-10 py-4 text-base font-bold rounded-lg hover:opacity-90 transition-opacity"
+            className="group inline-flex items-center gap-3 border border-secondary text-secondary px-10 py-5 text-xs uppercase tracking-[0.2em] font-medium hover:bg-secondary hover:text-secondary-foreground transition-all duration-300"
           >
-            BECOME A MEMBER <ArrowRight className="w-5 h-5" />
+            Become a Member
+            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </Link>
         </div>
       </div>

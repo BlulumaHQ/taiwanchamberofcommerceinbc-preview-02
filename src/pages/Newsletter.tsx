@@ -1,5 +1,4 @@
 import PageHero from "@/components/PageHero";
-import { Link } from "react-router-dom";
 
 const Newsletter = () => (
   <>
@@ -8,25 +7,36 @@ const Newsletter = () => (
       titleCn="電子報"
       subtitle="Subscribe and stay up-to-date with TCCBC developments."
     />
-    <section className="section-padding">
-      <div className="container mx-auto px-5 max-w-2xl text-center">
-        <h2 className="text-2xl md:text-3xl font-extrabold text-foreground mb-4">Stay Connected</h2>
-        <p className="text-muted-foreground mb-8">
-          Subscribe to our newsletter and stay up-to-date with the latest developments. Be a part of our business community. Find out what Chamber of Commerce membership can do for you.
-        </p>
-        <div className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto mb-8">
-          <input
-            type="email"
-            placeholder="Your email address"
-            className="flex-1 px-4 py-3 border border-border rounded-lg bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-secondary"
-          />
-          <button className="bg-primary text-primary-foreground px-6 py-3 text-sm font-bold rounded-lg hover:opacity-90 transition-opacity whitespace-nowrap">
-            SUBSCRIBE
-          </button>
+
+    <section className="py-32 md:py-48 px-6 md:px-10">
+      <div className="max-w-7xl mx-auto">
+        <div className="grid lg:grid-cols-12 gap-16 items-center">
+          <div className="lg:col-span-5">
+            <h2 className="text-4xl md:text-5xl font-heading italic font-light text-foreground leading-[1.05] mb-6">
+              Stay<br />Connected
+            </h2>
+            <p className="text-sm text-muted-foreground font-light leading-[1.9]">
+              Subscribe to our newsletter and stay up-to-date with the latest developments. Be a part of our business community. Find out what Chamber of Commerce membership can do for you.
+            </p>
+          </div>
+          <div className="lg:col-span-5 lg:col-start-8">
+            <div className="border-t border-border pt-8">
+              <div className="flex flex-col gap-0">
+                <input
+                  type="email"
+                  placeholder="Your email address"
+                  className="w-full px-5 py-4 border border-border bg-background text-foreground text-sm font-light focus:outline-none focus:border-secondary transition-colors"
+                />
+                <button className="w-full bg-primary text-primary-foreground px-6 py-4 text-xs uppercase tracking-[0.15em] font-medium hover:bg-secondary transition-colors duration-300">
+                  Subscribe Newsletter
+                </button>
+              </div>
+              <p className="text-xs text-muted-foreground font-light mt-6 font-chinese">
+                最完整的活動信息，請至我們的社群媒體頁面
+              </p>
+            </div>
+          </div>
         </div>
-        <p className="text-sm text-muted-foreground font-chinese">
-          最完整的活動信息，請至我們的社群媒體頁面
-        </p>
       </div>
     </section>
   </>
