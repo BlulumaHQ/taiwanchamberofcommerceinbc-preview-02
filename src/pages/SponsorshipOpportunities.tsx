@@ -1,6 +1,6 @@
 import PageHero from "@/components/PageHero";
-import { ArrowRight, Eye, Megaphone, Star } from "lucide-react";
 import { Link } from "react-router-dom";
+import { ArrowRight } from "lucide-react";
 
 const SponsorshipOpportunities = () => (
   <>
@@ -9,34 +9,38 @@ const SponsorshipOpportunities = () => (
       titleCn="贊助機會"
       subtitle="Promote your brand and support the Taiwanese business community in BC."
     />
-    <section className="section-padding">
-      <div className="container mx-auto px-5">
-        <div className="max-w-3xl mx-auto mb-14">
-          <p className="text-muted-foreground leading-relaxed">
-            TCCBC offers sponsorship opportunities that provide visibility for your brand at our high-profile events and within our extensive business network. Partner with us to reach hundreds of business professionals across British Columbia.
-          </p>
+
+    <section className="py-32 md:py-48 px-6 md:px-10">
+      <div className="max-w-7xl mx-auto">
+        <div className="grid lg:grid-cols-12 gap-16 mb-32">
+          <div className="lg:col-span-5">
+            <p className="text-sm text-muted-foreground font-light leading-[1.9]">
+              TCCBC offers sponsorship opportunities that provide visibility for your brand at our high-profile events and within our extensive business network. Partner with us to reach hundreds of business professionals across British Columbia.
+            </p>
+          </div>
         </div>
-        <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+
+        <div className="grid md:grid-cols-3 gap-px bg-border">
           {[
-            { icon: Eye, title: "Brand Visibility", desc: "Get your brand in front of hundreds of business professionals at TCCBC events." },
-            { icon: Megaphone, title: "Event Promotion", desc: "Sponsor our Annual Gala, Business Lunches, and other high-profile chamber events." },
-            { icon: Star, title: "Community Leadership", desc: "Position your business as a leader in the Taiwanese business community in BC." },
+            { title: "Brand Visibility", num: "I", desc: "Get your brand in front of hundreds of business professionals at TCCBC events." },
+            { title: "Event Promotion", num: "II", desc: "Sponsor our Annual Gala, Business Lunches, and other high-profile chamber events." },
+            { title: "Community Leadership", num: "III", desc: "Position your business as a leader in the Taiwanese business community in BC." },
           ].map((item) => (
-            <div key={item.title} className="bg-card border border-border rounded-xl p-8 text-center">
-              <div className="w-14 h-14 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-5">
-                <item.icon className="w-7 h-7 text-secondary" />
-              </div>
-              <h3 className="text-lg font-bold text-foreground mb-3">{item.title}</h3>
-              <p className="text-sm text-muted-foreground">{item.desc}</p>
+            <div key={item.title} className="bg-background p-8 md:p-10 group hover:bg-primary hover:text-primary-foreground transition-colors duration-500">
+              <span className="text-3xl font-heading italic text-border group-hover:text-primary-foreground/20 transition-colors">{item.num}</span>
+              <h3 className="text-xl font-heading italic font-light mt-8 mb-4 group-hover:text-primary-foreground transition-colors">{item.title}</h3>
+              <p className="text-sm text-muted-foreground font-light leading-relaxed group-hover:text-primary-foreground/60 transition-colors">{item.desc}</p>
             </div>
           ))}
         </div>
-        <div className="text-center mt-12">
+
+        <div className="mt-20 text-center">
           <Link
             to="/Contact"
-            className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-4 text-sm font-bold rounded-lg hover:opacity-90 transition-opacity"
+            className="group inline-flex items-center gap-3 bg-primary text-primary-foreground px-8 py-4 text-xs uppercase tracking-[0.2em] font-medium hover:bg-secondary transition-colors duration-300"
           >
-            INQUIRE ABOUT SPONSORSHIP <ArrowRight className="w-4 h-4" />
+            Inquire About Sponsorship
+            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </Link>
         </div>
       </div>
