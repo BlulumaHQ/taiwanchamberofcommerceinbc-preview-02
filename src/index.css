@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700&family=Inter:wght@300;400;500;600;700&family=Noto+Sans+TC:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -7,13 +7,13 @@
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 209 34% 18%;
+    --foreground: 209 34% 12%;
 
     --card: 0 0% 100%;
-    --card-foreground: 209 34% 18%;
+    --card-foreground: 209 34% 12%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 209 34% 18%;
+    --popover-foreground: 209 34% 12%;
 
     --primary: 209 34% 31%;
     --primary-foreground: 0 0% 100%;
@@ -21,26 +21,31 @@
     --secondary: 204 70% 53%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 210 20% 96%;
-    --muted-foreground: 209 15% 46%;
+    --muted: 40 10% 96%;
+    --muted-foreground: 209 12% 50%;
 
-    --accent: 209 25% 93%;
-    --accent-foreground: 209 34% 18%;
+    --accent: 35 20% 94%;
+    --accent-foreground: 209 34% 12%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 210 20% 90%;
-    --input: 210 20% 90%;
+    --border: 40 10% 88%;
+    --input: 40 10% 88%;
     --ring: 209 34% 31%;
 
-    --radius: 0.5rem;
+    --radius: 0px;
 
-    --section-alt: 210 20% 97%;
-    --section-dark: 209 34% 15%;
-    --section-dark-foreground: 210 20% 96%;
-    --cta-sticky: 209 40% 22%;
+    --section-alt: 40 15% 97%;
+    --section-dark: 209 34% 10%;
+    --section-dark-foreground: 40 10% 92%;
+    --cta-sticky: 209 40% 16%;
     --cta-sticky-foreground: 0 0% 100%;
+
+    --editorial-warm: 35 30% 95%;
+    --editorial-cream: 40 25% 97%;
+    --editorial-ink: 209 34% 8%;
+    --editorial-rule: 209 15% 75%;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -63,13 +68,13 @@
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-heading font-bold;
+    @apply font-heading;
   }
 }
 
 @layer utilities {
   .section-padding {
-    @apply py-20 md:py-24 lg:py-28;
+    @apply py-24 md:py-32 lg:py-40;
   }
 
   .section-alt {
@@ -79,5 +84,21 @@
   .section-dark {
     background-color: hsl(var(--section-dark));
     color: hsl(var(--section-dark-foreground));
+  }
+
+  .editorial-warm {
+    background-color: hsl(var(--editorial-warm));
+  }
+
+  .editorial-cream {
+    background-color: hsl(var(--editorial-cream));
+  }
+
+  .editorial-rule {
+    border-color: hsl(var(--editorial-rule));
+  }
+
+  .editorial-ink {
+    color: hsl(var(--editorial-ink));
   }
 }

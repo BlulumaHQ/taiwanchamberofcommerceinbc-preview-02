@@ -14,8 +14,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        heading: ["Montserrat", "sans-serif"],
-        body: ["Montserrat", "sans-serif"],
+        heading: ['"Playfair Display"', "Georgia", "serif"],
+        body: ["Inter", "sans-serif"],
         chinese: ['"Noto Sans TC"', "sans-serif"],
       },
       colors: {
@@ -57,6 +57,10 @@ export default {
         "section-dark-foreground": "hsl(var(--section-dark-foreground))",
         "cta-sticky": "hsl(var(--cta-sticky))",
         "cta-sticky-foreground": "hsl(var(--cta-sticky-foreground))",
+        "editorial-warm": "hsl(var(--editorial-warm))",
+        "editorial-cream": "hsl(var(--editorial-cream))",
+        "editorial-ink": "hsl(var(--editorial-ink))",
+        "editorial-rule": "hsl(var(--editorial-rule))",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
@@ -83,14 +87,29 @@ export default {
           to: { height: "0" },
         },
         "fade-in-up": {
-          from: { opacity: "0", transform: "translateY(20px)" },
+          from: { opacity: "0", transform: "translateY(30px)" },
           to: { opacity: "1", transform: "translateY(0)" },
+        },
+        "reveal": {
+          from: { opacity: "0", transform: "translateY(60px)" },
+          to: { opacity: "1", transform: "translateY(0)" },
+        },
+        "slide-in-left": {
+          from: { opacity: "0", transform: "translateX(-80px)" },
+          to: { opacity: "1", transform: "translateX(0)" },
+        },
+        "slide-in-right": {
+          from: { opacity: "0", transform: "translateX(80px)" },
+          to: { opacity: "1", transform: "translateX(0)" },
         },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
-        "fade-in-up": "fade-in-up 0.6s ease-out forwards",
+        "fade-in-up": "fade-in-up 0.8s ease-out forwards",
+        "reveal": "reveal 1s cubic-bezier(0.16, 1, 0.3, 1) forwards",
+        "slide-in-left": "slide-in-left 1s cubic-bezier(0.16, 1, 0.3, 1) forwards",
+        "slide-in-right": "slide-in-right 1s cubic-bezier(0.16, 1, 0.3, 1) forwards",
       },
     },
   },
